@@ -6,7 +6,9 @@ func main() {
 	input := "abcdefd"
 	var prefix byte = 'd'
 	fmt.Println("Input:", input, "Prefix:", prefix)
-	fmt.Println("Reversed prefix:", reversePrefix(input, prefix), "\n")
+	fmt.Println("Reversed prefix:", reversePrefix(input, prefix))
+
+	println()
 
 	nums := []int{-1, 1, 2, 3, 1}
 	target := 2
