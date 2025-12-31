@@ -1,37 +1,15 @@
 package main
 
-import "strings"
-
-func reverseString(word []byte) string {
-	left, right := 0, len(word)-1
-	for left <= right {
-		word[left], word[right] = word[right], word[left]
-		left++
-		right--
-	}
-	return string(word)
-}
-
-func reversePrefix(word string, ch byte) string {
-	ans := strings.Builder{}
-	for i := 0; i < len(word); i++ {
-		if word[i] == ch {
-			ans.WriteString(reverseString([]byte(word[:i+1])))
-			ans.WriteString(word[i+1:]) // once we reverse the original prefix, we join the rest.
-			break
-		}
-	}
-
-	// If the prefix isn't in the string, then you return the original input
-	if ans.Len() == 0 {
-		return word
-	}
-
-	return ans.String()
-}
+import "fmt"
 
 func main() {
 	input := "abcdefd"
 	var prefix byte = 'd'
-	println(reversePrefix(input, prefix))
+	fmt.Println("Input:", input, "Prefix:", prefix)
+	fmt.Println("Reversed prefix:", reversePrefix(input, prefix), "\n")
+
+	nums := []int{-1, 1, 2, 3, 1}
+	target := 2
+	fmt.Println("Nums:", nums, "Target", target)
+	fmt.Println("Count Pairs:", countPairs(nums, target))
 }
