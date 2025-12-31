@@ -4,7 +4,7 @@ It's basically the initialization of the variables that needs to hold different 
 
 ## Golang example of a Two Points algorithm usage:
 
-- This leet code problem can be handle easily with a two pointer approach:
+- This LeetCode problem can be easily solved with a two pointer approach:
 
 ```md
 2000. Reverse Prefix of Word
