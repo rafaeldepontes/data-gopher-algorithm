@@ -42,7 +42,7 @@ func main() {
 	length := list.Length * 2
 
 	println("========================")
-	for i := 0; i < length; i++ {
+	for range length {
 		println("Current Node:", current.Value)
 		println("Next Node will be:", current.Next.Value)
 		println("========================")

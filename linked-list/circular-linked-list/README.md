@@ -51,7 +51,7 @@ func main() {
 	length := list.Length * 2
 
 	println("========================")
-	for i := 0; i < length; i++ {
+	for range length {
 		println("Current Node:", current.Value)
 		println("Next Node will be:", current.Next.Value)
 		println("========================")
@@ -110,7 +110,7 @@ func main() {
 	iterations := list.Length * 2
 
 	println("========================")
-	for i := 0; i < iterations; i++ {
+	for range iterations {
 		println("Current Node:", current.Value)
 		println("Next Node:", current.Next.Value)
 		println("Previous Node:", current.Prev.Value)
