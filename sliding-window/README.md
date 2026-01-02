@@ -2,7 +2,7 @@
 
 Sliding window is generally used to solve problems that involve finding, manipulating, or adding something new to sub-arrays(or vectors) or sub-strings (technically they are the same thing, but let's ignore that for now...) so that a specific action is performed or a result occurs.
 
-## Golang of a sliding window:
+## Golang Implementation:
 
 This LeetCode problem can be easily solved with a sliding window approach:
 
