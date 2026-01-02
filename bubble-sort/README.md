@@ -8,6 +8,8 @@ You need to keep doing that until you finally sort the list.
 
 If none is swapped... well... the algorithm should do a earlier break.
 
+Bubble sort have a time complexity of O(n^2) and a time complexity of O(1)
+
 ## Go Implementatio:
 
 ```go
