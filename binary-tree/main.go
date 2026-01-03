@@ -127,6 +127,43 @@ func (t *BinaryTree) insertRecursive(node *Node, data int) {
 	}
 }
 
+func index(nums []int, data int) int {
+	for index, value := range nums {
+		if value == data {
+			return index
+		}
+	}
+	return -1
+}
+
+func BuildTree(inorder []int, postorder []int) *BinaryTree {
+	tree := BinaryTree{}
+	node := buildTree(inorder, postorder)
+	tree.root = node
+	return &tree
+}
+
+func buildTree(inorder []int, postorder []int) *Node {
+	if len(postorder) == 0 || len(inorder) == 0 {
+		return nil
+	}
+
+	root := postorder[len(postorder)-1]
+	tree := Node{
+		value: root,
+	}
+
+	inorderIndex := index(inorder, tree.value)
+	if inorderIndex == -1 {
+		return &tree
+	}
+
+	tree.right = buildTree(inorder[inorderIndex+1:], postorder[inorderIndex:len(postorder)-1])
+	tree.left = buildTree(inorder[:inorderIndex], postorder[:inorderIndex])
+
+	return &tree
+}
+
 func main() {
 	tree := BinaryTree{}
 	tree.Insert(2) // root
@@ -147,4 +184,12 @@ func main() {
 	tree.PrintTreeInorder()
 	tree.PrintTreePostorder()
 
+	// Rebuilding a tree from two arrays.
+	inorder := []int{9, 3, 15, 20, 7}
+	postorder := []int{9, 15, 7, 20, 3}
+
+	newTree := BuildTree(inorder, postorder)
+	if newTree != nil {
+		newTree.PrintTreeInorder()
+	}
 }
