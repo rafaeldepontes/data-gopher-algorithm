@@ -24,6 +24,71 @@ func (t *BinaryTree) Search(data int) *Node {
 	return t.searchRecursive(t.root, data)
 }
 
+func (t *BinaryTree) PrintTreePreorder() {
+	print("Tree: ")
+	t.preorderTraversal(t.root)
+	println()
+}
+
+func (t *BinaryTree) PrintTreeInorder() {
+	print("Tree: ")
+	t.inorderTraversal(t.root)
+	println()
+}
+
+func (t *BinaryTree) PrintTreePostorder() {
+	print("Tree: ")
+	t.postorderTraversal(t.root)
+	println()
+}
+
+func (t *BinaryTree) postorderTraversal(node *Node) {
+	if node == nil {
+		return
+	}
+
+	if node.left != nil {
+		t.postorderTraversal(node.left)
+	}
+
+	if node.right != nil {
+		t.postorderTraversal(node.right)
+	}
+
+	print(node.value, " ")
+}
+
+func (t *BinaryTree) inorderTraversal(node *Node) {
+	if node == nil {
+		return
+	}
+
+	if node.left != nil {
+		t.inorderTraversal(node.left)
+	}
+
+	print(node.value, " ")
+
+	if node.right != nil {
+		t.inorderTraversal(node.right)
+	}
+}
+
+func (t *BinaryTree) preorderTraversal(node *Node) {
+	if node == nil {
+		return
+	}
+
+	print(node.value, " ")
+	if node.left != nil {
+		t.preorderTraversal(node.left)
+	}
+
+	if node.right != nil {
+		t.preorderTraversal(node.right)
+	}
+}
+
 func (t *BinaryTree) searchRecursive(node *Node, data int) *Node {
 	if node == nil {
 		return nil
@@ -70,13 +135,16 @@ func main() {
 	tree.Insert(4) // root -> right -> left
 	tree.Insert(6) // root -> right -> right
 
-	// println(tree.root.value, tree.root.left.value, tree.root.right.value, tree.root.right.left.value, tree.root.right.right.value)
-
 	if node := tree.Search(6); node != nil {
-		println(node.value)
+		println("Node:", node.value)
 	}
 
 	if node := tree.Search(9); node != nil {
-		println(node.value)
+		println("Node:", node.value)
 	}
+
+	tree.PrintTreePreorder()
+	tree.PrintTreeInorder()
+	tree.PrintTreePostorder()
+
 }

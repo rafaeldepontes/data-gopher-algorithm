@@ -103,3 +103,153 @@ func main() {
 	}
 }
 ```
+
+## Preorder Traversal
+
+Well now that we have our tree implemented, we can just use a little bit of logic here to print our tree... don't you think?
+
+The Preorder Traversal is a depth-first method, it visits each node in the order `Root`, `Left` and finally `Right`. So if we have a tree like this:
+
+```bash
+        2
+    /       \
+   1        4
+          /   \
+        5       6
+```
+
+The Preorder result would be:
+
+```log
+*2* 1 5 4 6
+```
+
+> A easy way to remember is preorder the root will always be the first thing...
+
+## Go Implementation:
+
+```go
+func (t *BinaryTree) PrintTreePreorder() {
+	print("Tree: ")
+	t.preorderTraversal(t.root)
+	println()
+}
+
+func (t *BinaryTree) preorderTraversal(node *Node) {
+	if node == nil {
+		return
+	}
+
+	print(node.value, " ")
+	if node.left != nil {
+		t.preorderTraversal(node.left)
+	}
+
+	if node.right != nil {
+		t.preorderTraversal(node.right)
+	}
+}
+
+func main() {
+    tree := BinaryTree{}
+	tree.Insert(2) // root
+	tree.Insert(1) // root -> left
+	tree.Insert(5) // root -> right
+	tree.Insert(4) // root -> right -> left
+	tree.Insert(6) // root -> right -> right
+    // ...
+    tree.PrintTreePreorder()
+}
+```
+
+## Postorder Traversal
+
+Knowing the Preorder, we can easilly build our own postorder! Like the preorder where the root is always at the beginning, the postorder the root is always at the end.
+
+So for the same tree, the postorder would be:
+
+```log
+1 4 6 5 *2*
+```
+
+## Go Implementation:
+
+```go
+func (t *BinaryTree) PrintTreePostorder() {
+	print("Tree: ")
+	t.postorderTraversal(t.root)
+	println()
+}
+
+func (t *BinaryTree) postorderTraversal(node *Node) {
+	if node == nil {
+		return
+	}
+
+	if node.left != nil {
+		t.postorderTraversal(node.left)
+	}
+
+	if node.right != nil {
+		t.postorderTraversal(node.right)
+	}
+
+	print(node.value, " ")
+}
+
+func main() {
+    tree := BinaryTree{}
+	tree.Insert(2) // root
+	tree.Insert(1) // root -> left
+	tree.Insert(5) // root -> right
+	tree.Insert(4) // root -> right -> left
+	tree.Insert(6) // root -> right -> right
+    // ...
+    tree.PrintTreePostorder()
+}
+```
+
+## Inorder Traversal
+
+And finally for the Inorder traversal, the easiest one, the root somewhere in the middle
+
+```log
+1 *2* 5 4 6
+```
+
+## Go Implementation:
+
+```go
+func (t *BinaryTree) PrintTreeInorder() {
+	print("Tree: ")
+	t.inorderTraversal(t.root)
+	println()
+}
+
+func (t *BinaryTree) inorderTraversal(node *Node) {
+	if node == nil {
+		return
+	}
+
+	if node.left != nil {
+		t.preorderTraversal(node.left)
+	}
+
+	print(node.value, " ")
+
+	if node.right != nil {
+		t.preorderTraversal(node.right)
+	}
+}
+
+func main() {
+    tree := BinaryTree{}
+	tree.Insert(2) // root
+	tree.Insert(1) // root -> left
+	tree.Insert(5) // root -> right
+	tree.Insert(4) // root -> right -> left
+	tree.Insert(6) // root -> right -> right
+    // ...
+    tree.PrintTreeInorder()
+}
+```
