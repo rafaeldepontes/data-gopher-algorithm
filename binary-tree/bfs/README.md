@@ -40,7 +40,7 @@ func (t *BinaryTree) BFS(data int) *Node {
 	node := &Node{}
 	for len(dequeue) > 0 {
 		node = dequeue[0]
-		dequeue = append(dequeue[:0], dequeue[1:]...) // This is just a way to delete the X element from my queue...
+		dequeue = dequeue[1:]
 
 		if node.value == data {
 			return node
