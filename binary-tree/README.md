@@ -211,7 +211,7 @@ func main() {
 
 ## Inorder Traversal
 
-And finally for the Inorder traversal, the easiest one, the root somewhere in the middle
+And finally for the Inorder traversal, the easiest one, the root is in somewhere in the middle
 
 ```log
 1 *2* 5 4 6
@@ -253,5 +253,6 @@ func main() {
     tree.PrintTreeInorder()
 }
 ```
+
 
 
