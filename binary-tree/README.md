@@ -124,7 +124,7 @@ The Preorder result would be:
 *2* 1 5 4 6
 ```
 
-> A easy way to remember is preorder the root will always be the first thing...
+> A easy way to remember this is: When using preorder the root will always be the first thing...
 
 ## Go Implementation:
 
@@ -253,4 +253,5 @@ func main() {
     tree.PrintTreeInorder()
 }
 ```
+
 
