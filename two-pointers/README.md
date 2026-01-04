@@ -1,6 +1,6 @@
 # Two Pointers
 
-It's basically the initialization of the variables that needs to hold different memory spaces, each one go through an array (normally O(n) time complexity) and do some tipe of manipulation in it, it can be reversing it, duplicating or putting it in some specific order...
+It's basically the initialization of two variables that needs to hold different memory spaces, each one go through an array (normally O(n) time complexity) and do some type of manipulation in it, it can be reversing it, duplicating or putting it in some specific order...
 
 ## Golang example of a Two Points algorithm usage:
 
@@ -118,3 +118,4 @@ func main() {
 	fmt.Println("Count Pairs:", countPairs(nums, target))
 }
 ```
+
