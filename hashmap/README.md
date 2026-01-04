@@ -6,7 +6,7 @@ The HashMap use a hash function to "create" a special index, also called hash co
 
 A HashMap has a time complexity of O(1) for best and average cases and for the worst case O(n), and for the space complexity... is always O(n).
 
-There are some concepts behind a hash map, like a hash function, collision and work load, but we will se that in the future! For now, let's just see how to use.
+There are some concepts behind a hash map, like a hash function, collision and work load, but we will see that in the future! For now, let's just see how to use it.
 
 ## Golang example:
 
@@ -82,3 +82,4 @@ func main() {
 	println("Contains Nearby Duplicate?", containsNearbyDuplicate(nums, k))
 }
 ```
+
