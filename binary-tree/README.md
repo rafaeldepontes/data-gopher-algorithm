@@ -2,7 +2,7 @@
 
 A tree is basically just another type of graph, but for the sake of learning... We will considere both as different things.
 
-A Tree is a data structures that always will have a Root Node, the tree has a depth and the children's Node. A beatiful Tree to look at could be the one outside, but as we are talking about data structure the one that I'm talking about here is the directory tree... If you open any folder/directory in our desktop/notebook you can see you files in some type of order:
+A Tree is a data structures that always will have a Root Node, the tree has a depth and the children's Node. A beatiful Tree to look at could be the one outside, but as we are talking about data structure the one that I'm talking about here is the directory tree... If you open any folder/directory in our desktop/notebook your can see you files in some type of order:
 
 ```bash
 c:/
@@ -15,7 +15,7 @@ c:/
 
 This my friends are a tree, not a binary tree... just a Tree.
 
-A Binary Tree is the same thing but with limitations... Like for example, as the name suggest, a Binary Tree is a tree that each Node has only up to two children. So If we look at the example above... `C:` it's not a binary tree since it has five contents.
+A Binary Tree is the same thing but with some limitations... Like for example, as the name suggest, a Binary Tree is a tree that each Node has only up to two children. So If we look at the example above... `C:` it's not a binary tree since it has five contents.
 
 ## Golang Implementation:
 
@@ -253,3 +253,4 @@ func main() {
     tree.PrintTreeInorder()
 }
 ```
+
